@@ -5,7 +5,7 @@ from events.refusalPurchase import RefusalPurchase
 import csv
 
 FILE_NAME = 'journal.csv'
-
+PATH_TO_FILE = '.'
 FIELDNAMES = ['Событие',
               'Дата / Время',
               'ID пользователя',
