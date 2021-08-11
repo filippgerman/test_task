@@ -8,7 +8,7 @@ class BaseForm():
     '''
     def __init__(self):
         self.user_id = ' '
-        self.datetime = datetime.now()
+        self.datetime = datetime.now().strftime("%Y-%m-%d-%H.%M.%S")
         self.event = ' '
         self.source = ' '
         self.type_browser = ' '
@@ -33,5 +33,8 @@ class BaseForm():
     def generation_time(self):
         hours = randint(0,24)
         minutes = randint(0,60)
-        return self.datetime + timedelta(hours=hours, minutes=minutes)
+        seconds = randint(0, 60)
+        new_date = datetime.strptime(self.datetime, "%Y-%m-%d-%H.%M.%S")  + timedelta(hours=hours, minutes=minutes, seconds=seconds) 
+        return new_date.strftime("%Y-%m-%d-%H.%M.%S")
+
 
